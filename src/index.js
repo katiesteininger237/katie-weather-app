@@ -59,6 +59,11 @@ function formatDate(date) {
   let iconResult = document.querySelector("#icon");
   iconResult.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
+let dateElement = document.querySelector("#time-display");
+    let currentTime = new Date();
+  
+    dateElement.innerHTML = formatDate(currentTime);
+
   }
   
   function handleSubmit(event) {
