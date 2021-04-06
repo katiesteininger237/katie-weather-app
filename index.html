@@ -46,26 +46,63 @@
         </form>
        <br />
        
-       <h2>
-            Weather for:
-        </h2>
-    
-        <h3 id ="selected-city">
-        SELECTED CITY NAME
-        </h3>
-     <ul class="tempAndTime"> 
-    <li id="time-display">
-        Tuesday 16:00 
-    </li>    
+     
+  <h3 id ="selected-city">
+  SELECTED CITY NAME
+  </h3>
 
-    <li  id="current-temperature">
-        Current Temperature: 
-        <span id = "the-temperature">
-          17
-        </span>
-        °C 
-      </li>
- </ul> 
+<ul>
+  <em>
+    <li>
+         Last updated:
+          <span id="time-display">Tuesday 16:00 </span> 
+         </li>  
+         </em>
+        <li id= "weather-description">
+          Clear
+        </li>
+</ul>
+  <div class ="row">
+    <div class = "col-6">
+      <div class = "clearfix weather-temperature">
+        <img src="" alt="Clear" id= "icon" class="float-left"/>
+      <div>
+        <ul> 
+        <li id="temperature">
+          <span id = "the-temperature">
+            17
+          </span>
+          <span id = "celsius-link"> °C </span>
+          | 
+        <span id = "farenheit-link"> °F</span>
+        </li>
+      </ul> 
+  
+      </div>
+      </div>
+    </div>
+        <div class = "col-6">
+      <ul> 
+        <li id="humidity">
+          Humidity:
+          <span id = "the-humidity">
+            20
+          </span>%
+         </li>  
+        <li id= "wind">
+          Wind:
+          <span id= "the-wind">
+            6
+          </span>
+          km/h
+        </li>
+      </ul> 
+    </div>
+  </div>
+
+  
+
+  
     
  
  <p class="thisWeek">

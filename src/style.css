@@ -1,58 +1,55 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f4f9f9;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f4f9f9;
 }
-h1{
-    margin-top: 40px;
-}
-
-
-h2, 
-h3,
-p 
-{
-    display: block;
-    margin: 10px;
-    text-align: center;
+h1 {
+  margin-top: 40px;
 }
 
+h3 {
+  display: block;
+  margin: 20px;
+  margin-left: 30px;
+}
+
+p {
+  display: block;
+  margin: 10px;
+  text-align: center;
+}
+
+li {
+  font-size: 15px;
+  padding-top: 5px;
+  list-style: none;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
 
 .navigationBar {
-    display: block;
-    background-color: #ccf2f4;
-    padding: 10px;
-    border-radius: 4px;
-    width: 325px;
+  display: block;
+  background-color: #ccf2f4;
+  padding: 10px;
+  border-radius: 4px;
+  width: 325px;
 }
 
-
-.tempAndTime{
-    text-align:center;
-    font-size: 20px;
-    padding-top: 20px;
-    list-style-type: none;
+.thisWeek {
+  font-weight: 600;
+  padding-top: 20px;
 }
-
-
-
-
-.thisWeek{
-    font-weight: 600;
-    padding-top: 20px;
-}
-
 
 .card {
-    background-color: #a4ebf3;
+  background-color: #a4ebf3;
 }
 
 .card-title {
-    text-align: center;
+  text-align: center;
 }
-
 
 .weatherEmoji,
 .temp {
-    padding-top: 20px;
- 
+  padding-top: 20px;
 }
