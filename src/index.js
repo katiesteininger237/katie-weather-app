@@ -33,7 +33,13 @@ function formatDate(date) {
 
   
   function showWeather(response) {
+
+
+
   document.querySelector("#selected-city").innerHTML = response.data.name;
+
+    celsiusTemp = response.data.main.temp;
+  
   let temperature = Math.round(response.data.main.temp);
   let temperatureResult = document.querySelector("#the-temperature");
   temperatureResult.innerHTML =`${temperature}`;  
@@ -95,11 +101,28 @@ function formatDate(date) {
   let currentLocationButton = document.querySelector ("#my-location");
   currentLocationButton. addEventListener("click", getCurrentLocation)
 
+
+  function displayFarenheitTemperature(event) {
+    event.preventDefault;
+    let temperatureElement = document.querySelector("#the-temperature");
+    
+    farenheitLink.classList.add("active");
+    let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(farenheitTemp);
+
+  }
+
+  let celsiusTemp = null
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
+
+
+
+
+
   search("Oslo");
-
-
-
-
 
   
 
