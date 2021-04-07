@@ -53,7 +53,9 @@
   </h3>
 
 <ul>
+  <strong>
   <em>
+    <ul>
     <li>
          Last updated:
           <span id="time-display">Tuesday 16:00 </span> 
@@ -63,19 +65,18 @@
           Clear
         </li>
 </ul>
+</strong>
   <div class ="row">
-    <div class = "col-6">
+    <div class = "col-6 d-flex align-items-center">
 
         <img src="" alt="Clear" id= "icon" class="float-left"/>
       <div>
         <ul> 
         <li id="temperature">
-          <span id = "the-temperature">
+          <span id = "the-temperature" class = "the-temperature">
             17
           </span>
-          <span id = "celsius-link"> °C </span>
-          | 
-        <span id = "farenheit-link"> °F</span>
+          <span class = "units"> °C | <a href="#" id = "farenheit-link">°F</a></span>
         </li>
       </ul> 
   
@@ -83,6 +84,7 @@
       
     </div>
         <div class = "col-6">
+          <strong>
       <ul> 
         <li id="humidity">
           Humidity:
@@ -98,6 +100,7 @@
           km/h
         </li>
       </ul> 
+      </strong>
     </div>
   </div>
 

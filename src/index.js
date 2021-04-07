@@ -1,4 +1,4 @@
-// challenge 1
+
 function formatDate(date) {
 
   let hours = date.getHours();
@@ -32,10 +32,6 @@ function formatDate(date) {
   
 
   
-  
-  //homework week 5 
-
-  
   function showWeather(response) {
   document.querySelector("#selected-city").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
@@ -59,7 +55,7 @@ function formatDate(date) {
   let iconResult = document.querySelector("#icon");
   iconResult.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
-let dateElement = document.querySelector("#time-display");
+    let dateElement = document.querySelector("#time-display");
     let currentTime = new Date();
   
     dateElement.innerHTML = formatDate(currentTime);
@@ -100,6 +96,8 @@ let dateElement = document.querySelector("#time-display");
   currentLocationButton. addEventListener("click", getCurrentLocation)
 
   search("Oslo");
+
+
 
 
 
