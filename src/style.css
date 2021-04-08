@@ -46,6 +46,15 @@ li:first-letter {
     font-size: 35px;
 }
 
+.active {
+    color: rgb (33, 33, 33);
+    cursor: default;
+}
+
+.active:hover {
+    text-decoration: none;
+}
+
 .thisWeek {
   font-weight: 600;
   padding-top: 20px;
