@@ -59,6 +59,7 @@ li:first-letter {
 .thisWeek {
   font-weight: 600;
   padding-top: 20px;
+  text-align: center;
 }
 
 .card {
