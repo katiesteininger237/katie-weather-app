@@ -31,10 +31,15 @@ function formatDate(date) {
     dateElement.innerHTML = formatDate(currentTime);
   
 
+  function getForecast(coordinates){
+    console.log(coordinates);
+    let apiKey = "88ff65df154309d8c97f7b13168954a5";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+  }
+
   
   function showWeather(response) {
-
-
 
   document.querySelector("#selected-city").innerHTML = response.data.name;
 
@@ -61,10 +66,12 @@ function formatDate(date) {
   let iconResult = document.querySelector("#icon");
   iconResult.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
-    let dateElement = document.querySelector("#time-display");
-    let currentTime = new Date();
-  
-    dateElement.innerHTML = formatDate(currentTime);
+  let dateElement = document.querySelector("#time-display");
+  let currentTime = new Date();
+
+  dateElement.innerHTML = formatDate(currentTime);
+
+  getForecast(response.data.coord);
 
   }
   
@@ -132,7 +139,9 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
-function displayForecast() {
+function displayForecast(response) {
+
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun","Mon","Tue"];
@@ -163,12 +172,9 @@ function displayForecast() {
 }
 
 
-
-
-
   search("Oslo");
 
-  displayForecast();
+
 
   
 
