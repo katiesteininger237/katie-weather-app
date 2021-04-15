@@ -43,7 +43,7 @@ function formatDate(date) {
   function getForecast(coordinates){
     console.log(coordinates);
     let apiKey = "88ff65df154309d8c97f7b13168954a5";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayForecast);
   }
 
@@ -52,7 +52,6 @@ function formatDate(date) {
 
   document.querySelector("#selected-city").innerHTML = response.data.name;
 
-    celsiusTemp = response.data.main.temp;
   
   let temperature = Math.round(response.data.main.temp);
   let temperatureResult = document.querySelector("#the-temperature");
@@ -97,7 +96,7 @@ function formatDate(date) {
 
   function search(city) {
   let apiKey = "88ff65df154309d8c97f7b13168954a5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showWeather);
   }
 
@@ -105,7 +104,7 @@ function formatDate(date) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "88ff65df154309d8c97f7b13168954a5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showWeather);
   }
@@ -117,35 +116,6 @@ function formatDate(date) {
   let currentLocationButton = document.querySelector ("#my-location");
   currentLocationButton. addEventListener("click", getCurrentLocation)
 
-
-  function displayFarenheitTemperature(event) {
-    event.preventDefault;
-    let temperatureElement = document.querySelector("#the-temperature");
-    celsiusLink.classList.remove("active");
-    farenheitLink.classList.add("active");
-    let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    temperatureElement.innerHTML = Math.round(farenheitTemp);
-
-  }
-
-
-    function displayCelsiusTemperature(event) {
-    event.preventDefault;
-    let temperatureElement = document.querySelector("#the-temperature");
-    farenheitLink.classList.remove("active");
-    celsiusLink.classList.add("active");
-    temperatureElement.innerHTML = Math.round(celsiusTemp)
-
-  }
-
-  let celsiusTemp = null
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", displayFarenheitTemperature);
-
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 function displayForecast(response) {
@@ -166,7 +136,7 @@ function displayForecast(response) {
           width="42"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temp.max)}° </span>
+          <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temp.max)}° </span> │
           <span class="weather-forecast-temperature-min"> ${Math.round(forecastDay.temp.min)}° </span>
         </div>
       </div>
