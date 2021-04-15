@@ -7,9 +7,7 @@ h1 {
 }
 
 h3 {
-  display: block;
-  margin: 20px;
-  margin-left: 30px;
+   text-align: center;
 }
 
 p {
@@ -32,6 +30,13 @@ li:first-letter {
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
+border-width: 1px;
+ border-style: solid;
+ border-color: rgb(1, 126, 148);
+ border-radius: 4px;
+ padding: 15px;
+
+
 }
 
 .navigationBar {
@@ -39,22 +44,16 @@ li:first-letter {
   background-color: #89e6eb;
   padding: 10px;
   border-radius: 4px;
-  width: 325px;
+  width: 227px;
 }
+
+
 
 .the-temperature {
     font-size: 35px;
 }
 
-.active {
-    color: black;
-    cursor: default;
-    text-decoration: none;
-}
 
-.active:hover {
-    text-decoration: none;
-}
 
 .thisWeek {
   font-weight: 600;
