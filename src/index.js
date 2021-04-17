@@ -1,6 +1,4 @@
-
 function formatDate(date) {
-
   let hours = date.getHours();
   if (hours<10){
     hours = `0${hours}`;
@@ -21,26 +19,24 @@ function formatDate(date) {
   "Friday",
   "Saturday"];
   
-  
-    return `${days[dayIndex]} ${hours}:${minutes}`;
+  return `${days[dayIndex]} ${hours}:${minutes}`;
   }
   
-    let dateElement = document.querySelector("#time-display");
-    let currentTime = new Date();
-  
-    dateElement.innerHTML = formatDate(currentTime);
+  let dateElement = document.querySelector("#time-display");
+  let currentTime = new Date();
+
+  dateElement.innerHTML = formatDate(currentTime);
 
 
-  function formatDay(timestamp){
+function formatDay(timestamp){
     let date = new Date(timestamp*1000);
     let day = date.getDay();
     let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
     return days[day];
-
   }
   
 
-  function getForecast(coordinates){
+function getForecast(coordinates){
     console.log(coordinates);
     let apiKey = "88ff65df154309d8c97f7b13168954a5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
@@ -48,7 +44,7 @@ function formatDate(date) {
   }
 
   
-  function showWeather(response) {
+function showWeather(response) {
 
   document.querySelector("#selected-city").innerHTML = response.data.name;
 
@@ -83,24 +79,24 @@ function formatDate(date) {
 
   }
   
-  function handleSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector ("#city-search").value;
   search(city);
   }
 
-  function getCurrentLocation(event) {
+function getCurrentLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
   }
 
-  function search(city) {
+function search(city) {
   let apiKey = "88ff65df154309d8c97f7b13168954a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showWeather);
   }
 
-  function searchLocation(position) {
+function searchLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "88ff65df154309d8c97f7b13168954a5";
@@ -109,17 +105,14 @@ function formatDate(date) {
   axios.get(apiUrl).then(showWeather);
   }
 
-  let searchForm = document.querySelector("#city-form");
+let searchForm = document.querySelector("#city-form");
   searchForm.addEventListener("submit", handleSubmit);
 
-
-  let currentLocationButton = document.querySelector ("#my-location");
+let currentLocationButton = document.querySelector ("#my-location");
   currentLocationButton. addEventListener("click", getCurrentLocation)
 
 
-
 function displayForecast(response) {
-
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
@@ -150,7 +143,7 @@ function displayForecast(response) {
 }
 
 
-  search("Oslo");
+  search("New York");
 
 
 
